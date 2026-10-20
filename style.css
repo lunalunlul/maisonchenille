@@ -117,7 +117,7 @@ p + p { margin-top: 16px; }
   display: flex; align-items: center; justify-content: space-between; gap: 16px; flex-wrap: wrap;
 }
 .site-header .wordmark { display: block; line-height: 0; }
-.site-header .wordmark img { height: 54px; width: auto; }   /* 毛茸茸的名字（Parisienne 加毛边），不放印章 */
+.site-header .wordmark img { height: 42px; width: auto; }   /* 毛茸茸的名字（Parisienne 加毛边），不放印章 */
 .site-header nav { display: flex; gap: 26px; font-size: 14px; letter-spacing: .14em; text-transform: uppercase; align-items: center; }
 .site-header nav .lang { padding: 4px 10px; border: 1px solid var(--gold); color: var(--gold); font-size: 12px; }
 .site-header nav .lang:hover { background: var(--gold); color: var(--cream); }
@@ -297,7 +297,7 @@ p + p { margin-top: 16px; }
   .site-footer .links { justify-content: center; }
   .site-footer .copy { text-align: center; }
   .site-header .wrap { justify-content: center; }
-  .site-header .wordmark img { height: 44px; }
+  .site-header .wordmark img { height: 36px; }
   .signup input { border-right: 1px solid var(--gold); max-width: none; }
   .signup .btn { width: 100%; margin-top: 10px; }
 }
