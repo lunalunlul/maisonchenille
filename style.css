@@ -117,7 +117,9 @@ p + p { margin-top: 16px; }
   display: flex; align-items: center; justify-content: space-between; gap: 16px; flex-wrap: wrap;
 }
 .site-header .logo img { height: 48px; width: auto; }
-.site-header nav { display: flex; gap: 26px; font-size: 14px; letter-spacing: .14em; text-transform: uppercase; }
+.site-header nav { display: flex; gap: 26px; font-size: 14px; letter-spacing: .14em; text-transform: uppercase; align-items: center; }
+.site-header nav .lang { padding: 4px 10px; border: 1px solid var(--gold); color: var(--gold); font-size: 12px; }
+.site-header nav .lang:hover { background: var(--gold); color: var(--cream); }
 
 /* ---------- 2 · 开场 ---------- */
 .hero {
