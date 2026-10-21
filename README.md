@@ -10,7 +10,7 @@
 
 上线前要改的地方（在 index.html 里搜 TODO）
 1. 三处社媒链接 href="#" 换成你的账号地址（页眉一组、页脚一组）
-2. 两个表单的 action：把 formspree.io/f/xxxx 的 xxxx 换成你的表单 id
+2. ~~表单 action~~ 已接 Formspree（表单「Maison Chenille — Lancement」，id mljgqjze；提交后跳到 merci.html / en/thanks.html）
 3. mentions-legales.html 里填姓名、地址，托管商二选一
 4. 有了照片之后换掉 hero / kit / about 三处的占位图
 
