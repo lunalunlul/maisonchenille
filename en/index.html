@@ -47,6 +47,10 @@
 
         <!-- TODO: 把 xxxx 换成你在 formspree.io 拿到的表单 id -->
         <form class="signup center" action="https://formspree.io/f/xxxx" method="POST">
+          <input type="hidden" name="_subject" value="New sign-up — Maison Chenille">
+          <input type="hidden" name="_next" value="https://maisonchenille.fr/en/thanks.html">
+          <input type="hidden" name="_language" value="en">
+          <input type="text" name="_gotcha" style="display:none" tabindex="-1" autocomplete="off">
           <label for="email-hero" class="sr-only">Your email address</label>
           <input id="email-hero" type="email" name="email" placeholder="you@email.com" required autocomplete="email">
           <button type="submit" class="btn">Tell me when it launches</button>
@@ -110,6 +114,10 @@
 
           <!-- 开卖时换成：<a class="btn" href="https://buy.stripe.com/xxxx">Acheter · 24 €</a> -->
           <form class="signup" action="https://formspree.io/f/xxxx" method="POST">
+          <input type="hidden" name="_subject" value="New sign-up — Maison Chenille">
+          <input type="hidden" name="_next" value="https://maisonchenille.fr/en/thanks.html">
+          <input type="hidden" name="_language" value="en">
+          <input type="text" name="_gotcha" style="display:none" tabindex="-1" autocomplete="off">
             <label for="email-kit" class="sr-only">Your email address</label>
             <input id="email-kit" type="email" name="email" placeholder="you@email.com" required autocomplete="email">
             <button type="submit" class="btn">Notify me</button>
