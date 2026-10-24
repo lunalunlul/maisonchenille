@@ -286,6 +286,10 @@ p + p { margin-top: 16px; }
 .story .chapter p + p { margin-top: 16px; }
 .story figure { margin: 36px auto; max-width: 820px; }
 .story figure svg { width: 100%; height: auto; display: block; }
+.story .gestes { display:grid; grid-template-columns: repeat(3, 1fr); gap: 16px; text-align:center; margin-top: 4px; }
+.story .gestes b { display:block; font-size: 17px; color: var(--wine); font-weight: 600; }
+.story .gestes span { display:block; font-size: 14px; color: var(--forest); margin-top: 4px; line-height: 1.4; }
+@media (max-width: 800px) { .story .gestes { grid-template-columns: 1fr; gap: 10px; } }
 .story figcaption { font-size: 14px; color: var(--gold); letter-spacing: .02em; text-align: center; margin-top: 12px; font-style: italic; }
 .story .timeline { list-style: none; padding: 0; margin: 28px 0 0; border-left: 1px solid var(--gold); }
 .story .timeline li { position: relative; padding: 0 0 22px 28px; }
