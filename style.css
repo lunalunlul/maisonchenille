@@ -489,3 +489,18 @@ p + p { margin-top: 16px; }
   .signup input { border-right: 1px solid var(--gold); max-width: none; }
   .signup .btn { width: 100%; margin-top: 10px; }
 }
+
+/* ---------- 大标题用品牌字体（Parisienne） ---------- */
+.head h2, .entry h2, .teaser h2, .newsletter h2, .catalog h1, .story h1 {
+  font-family: var(--font-script); font-weight: 400; letter-spacing: 0; line-height: 1.05;
+}
+.head h2, .teaser h2 { font-size: 58px; }
+.entry h2 { font-size: 56px; margin-top: 4px; }
+.newsletter h2 { font-size: 50px; max-width: 18ch; }
+.catalog h1, .story h1 { font-size: clamp(54px, 7vw, 80px); }
+@media (max-width: 800px) {
+  .head h2, .teaser h2 { font-size: 46px; }
+  .entry h2 { font-size: 46px; }
+  .newsletter h2 { font-size: 40px; }
+  .catalog h1, .story h1 { font-size: 50px; }
+}
