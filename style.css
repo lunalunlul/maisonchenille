@@ -305,16 +305,13 @@ p + p { margin-top: 16px; }
 .story .chapter { max-width: 680px; margin: 72px auto 0; }
 .story .chapter h2 { font-size: 30px; margin-bottom: 14px; }
 .story .chapter p + p { margin-top: 16px; }
-.story figure { margin: 36px auto; max-width: 720px; }
+.story figure { margin: 36px auto; max-width: 680px; }
 .story figure svg { width: 100%; height: auto; display: block; }
 .story figure img { width: 100%; height: auto; display: block; border: 1px solid rgba(176,141,79,.3); }
-.story .story-open { display: grid; grid-template-columns: 5fr 6fr; gap: 56px; align-items: start; margin-top: 72px; }
-.story .story-open figure.opening { margin: 0; max-width: none; position: sticky; top: 96px; }
-.story .story-open .chapter { margin-top: 0; }
-@media (max-width: 800px) {
-  .story .story-open { grid-template-columns: 1fr; gap: 28px; margin-top: 48px; }
-  .story .story-open figure.opening { position: static; }
-}
+.story .chapter::after { content: ""; display: block; clear: both; }
+.story .chapter figure.opening { float: left; width: 42%; max-width: 280px; margin: 6px 28px 10px 0; }
+.story .chapter figure.opening img { border: 1px solid rgba(176,141,79,.3); }
+@media (max-width: 800px) { .story .chapter figure.opening { width: 45%; margin-right: 18px; } }
 .story .gestes { display:grid; grid-template-columns: repeat(3, 1fr); gap: 16px; text-align:center; margin-top: 4px; }
 .story .gestes b { display:block; font-size: 17px; color: var(--wine); font-weight: 600; }
 .story .gestes span { display:block; font-size: 14px; color: var(--forest); margin-top: 4px; line-height: 1.4; }
