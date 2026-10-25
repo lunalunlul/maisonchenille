@@ -287,7 +287,7 @@ p + p { margin-top: 16px; }
 .site-footer li a { color: var(--forest); }
 .site-footer li a:hover { color: var(--wine); }
 .site-footer .soon { color: #9a8f82; }
-.site-footer .soon::after { content: " · bientôt"; font-size: 12px; font-style: italic; }
+.site-footer .soon::after { content: " · " attr(data-soon); font-size: 12px; font-style: italic; }
 .site-footer .brandcol .seal { width: 72px; margin-bottom: 12px; }
 .site-footer .brand { font-family: var(--font-script); font-size: 30px; line-height: 1; color: var(--wine); margin-bottom: 10px; }
 .site-footer .brandcol p { font-size: 14.5px; color: #6b6058; max-width: 26ch; }

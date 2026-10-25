@@ -9,28 +9,35 @@
   'use strict';
 
   var ROSE = '/assets/rose-transparent.png';
+  var LANG = (document.documentElement.lang || 'fr').slice(0, 2);
+  var EN = LANG === 'en';
+  var T = EN
+    ? { soon: 'Coming soon', out: 'Sold out', price_tbd: 'Price to come', buy: 'Buy', colour: 'Colour', occasion: 'Occasion', price: 'Price', all: 'Show all', base: '/en/bouquets/' }
+    : { soon: 'Bientôt', out: 'Épuisé', price_tbd: 'Prix à venir', buy: 'Acheter', colour: 'Couleur', occasion: 'Occasion', price: 'Prix', all: 'Tout voir', base: '/bouquets/' };
+  function tx(obj, key) { return (EN && obj[key + '_en']) ? obj[key + '_en'] : obj[key]; }
+  function occLabel(data, k) { return (EN && data.occasions_en && data.occasions_en[k]) || data.occasions[k]; }
 
   function esc(s) { return String(s).replace(/[&<>"]/g, function (c) { return { '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' }[c]; }); }
-  function fmtPrice(n) { return n.toLocaleString('fr-FR', { minimumFractionDigits: n % 1 ? 2 : 0 }) + ' €'; }
+  function fmtPrice(n) { var v = n.toLocaleString(EN ? 'en-GB' : 'fr-FR', { minimumFractionDigits: n % 1 ? 2 : 0 }); return EN ? '€' + v : v + '\u00a0€'; }
 
   function card(p, data) {
     var sw = (p.colors || []).map(function (c) {
       var col = data.colors[c]; if (!col) return '';
-      return '<i class="swatch" style="background:' + col.hex + '" title="' + esc(col.label) + '"></i>';
+      return '<i class="swatch" style="background:' + col.hex + '" title="' + esc(tx(col, 'label')) + '"></i>';
     }).join('');
     var media = p.image
-      ? '<img src="' + esc(p.image) + '" alt="' + esc(p.name) + '" loading="lazy">'
+      ? '<img src="' + esc(p.image) + '" alt="' + esc(tx(p, 'name')) + '" loading="lazy">'
       : '<img class="ph" src="' + ROSE + '" alt="" aria-hidden="true">';
-    var badge = p.status === 'bientot' ? '<span class="badge">Bientôt</span>'
-              : p.status === 'epuise' ? '<span class="badge">Épuisé</span>' : '';
+    var badge = p.status === 'bientot' ? '<span class="badge">' + T.soon + '</span>'
+              : p.status === 'epuise' ? '<span class="badge">' + T.out + '</span>' : '';
     var price, action = '';
-    if (p.price == null) { price = '<span class="price soon">Prix à venir</span>'; }
+    if (p.price == null) { price = '<span class="price soon">' + T.price_tbd + '</span>'; }
     else { price = '<span class="price">' + fmtPrice(p.price) + '</span>'; }
-    if (p.stripe && p.status === 'dispo') { action = '<a class="btn small-btn" href="' + esc(p.stripe) + '">Acheter</a>'; }
+    if (p.stripe && p.status === 'dispo') { action = '<a class="btn small-btn" href="' + esc(p.stripe) + '">' + T.buy + '</a>'; }
     return '<article class="product" data-id="' + esc(p.id) + '">' +
       '<div class="media">' + media + badge + '</div>' +
-      '<h3 class="name">' + esc(p.name) + '</h3>' +
-      '<p class="tag">' + esc(p.tagline || '') + '</p>' +
+      '<h3 class="name">' + esc(tx(p, 'name')) + '</h3>' +
+      '<p class="tag">' + esc(tx(p, 'tagline') || '') + '</p>' +
       '<div class="meta">' + price + '<span class="swatches">' + sw + '</span></div>' +
       action + '</article>';
   }
@@ -82,22 +89,22 @@
       var cols = usedIn('colors');
       var colKeys = Object.keys(data.colors).filter(function (k) { return cols[k]; });
       if (colKeys.length) {
-        html += '<div class="group"><span class="label">Couleur</span>' +
-          colKeys.map(function (k) { return chip('couleur', k, data.colors[k].label, st.couleur === k); }).join('') + '</div>';
+        html += '<div class="group"><span class="label">' + T.colour + '</span>' +
+          colKeys.map(function (k) { return chip('couleur', k, tx(data.colors[k], 'label'), st.couleur === k); }).join('') + '</div>';
       }
       var occ = usedIn('occasions');
       var occKeys = Object.keys(data.occasions).filter(function (k) { return occ[k]; });
       if (occKeys.length) {
-        html += '<div class="group"><span class="label">Occasion</span>' +
-          occKeys.map(function (k) { return chip('occasion', k, data.occasions[k], st.occasion === k); }).join('') + '</div>';
+        html += '<div class="group"><span class="label">' + T.occasion + '</span>' +
+          occKeys.map(function (k) { return chip('occasion', k, occLabel(data, k), st.occasion === k); }).join('') + '</div>';
       }
       var anyPrice = items.some(function (p) { return p.price != null; });
       if (anyPrice && data.price_bands) {
-        html += '<div class="group"><span class="label">Prix</span>' +
-          data.price_bands.map(function (b) { return chip('prix', b.id, b.label, st.prix === b.id); }).join('') + '</div>';
+        html += '<div class="group"><span class="label">' + T.price + '</span>' +
+          data.price_bands.map(function (b) { return chip('prix', b.id, tx(b, 'label'), st.prix === b.id); }).join('') + '</div>';
       }
       if (st.couleur || st.occasion || st.prix) {
-        html += '<button type="button" class="chip reset" data-reset>Tout voir</button>';
+        html += '<button type="button" class="chip reset" data-reset>' + T.all + '</button>';
       }
       bar.innerHTML = html;
     }
@@ -129,9 +136,10 @@
   }
 
   function renderColors(el, data) {
+    var base = el.getAttribute('data-base') || T.base;
     el.innerHTML = Object.keys(data.colors).map(function (k) {
       var c = data.colors[k];
-      return '<a class="color" href="/bouquets/?couleur=' + encodeURIComponent(k) + '"><i style="background:' + c.hex + '"></i>' + esc(c.label) + '</a>';
+      return '<a class="color" href="' + base + '?couleur=' + encodeURIComponent(k) + '"><i style="background:' + c.hex + '"></i>' + esc(tx(c, 'label')) + '</a>';
     }).join('');
   }
 
