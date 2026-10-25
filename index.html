@@ -3,158 +3,192 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Maison Chenille — Bouquets en fil chenille, Paris</title>
-  <meta name="description" content="Maison Chenille crée des bouquets en fil chenille qui ne fanent pas : des fleurs façonnées à la main, des couleurs choisies avec soin, composés à Paris.">
-
-  <meta property="og:title" content="Maison Chenille — Des bouquets qui ne fanent pas">
-  <meta property="og:description" content="Des fleurs façonnées à la main, des couleurs choisies avec soin, composées à Paris.">
+  <title>Maison Chenille — Bouquets et kits en fil chenille, Paris</title>
+  <meta name="description" content="Maison Chenille crée des bouquets en fil chenille qui ne fanent pas : des fleurs façonnées à la main, des couleurs choisies avec soin, composés à Paris. Des kits pour les faire soi-même suivront.">
+  
+  <meta property="og:title" content="Maison Chenille — Bouquets et kits en fil chenille, Paris">
+  <meta property="og:description" content="Maison Chenille crée des bouquets en fil chenille qui ne fanent pas : des fleurs façonnées à la main, des couleurs choisies avec soin, composés à Paris. Des kits pour les faire soi-même suivront.">
   <meta property="og:image" content="https://maisonchenille.fr/assets/seal-512.png">
   <meta property="og:url" content="https://maisonchenille.fr/">
   <meta property="og:type" content="website">
-
+  <link rel="canonical" href="https://maisonchenille.fr/">
   <link rel="alternate" hreflang="fr" href="https://maisonchenille.fr/">
   <link rel="alternate" hreflang="en" href="https://maisonchenille.fr/en/">
-  <link rel="icon" href="assets/favicon.png" type="image/png">
-  <link rel="apple-touch-icon" href="assets/apple-touch-icon.png">
-  <link rel="stylesheet" href="style.css">
+  <link rel="icon" href="/assets/favicon.png" type="image/png">
+  <link rel="apple-touch-icon" href="/assets/apple-touch-icon.png">
+  <link rel="stylesheet" href="/style.css">
+  <script src="/assets/catalog.js" defer></script>
 </head>
 <body>
 
-  <!-- 1 · 页眉 -->
   <header class="site-header">
     <div class="wrap">
-      <a class="wordmark" href="/" aria-label="Maison Chenille, accueil"><img src="assets/wordmark.webp" alt="Maison Chenille" width="1047" height="186"></a>
-      <nav aria-label="Réseaux sociaux">
-        <a href="https://www.instagram.com/maisonchenille2026/" target="_blank" rel="noopener">Instagram</a>
-        <a href="https://www.tiktok.com/@maisonchenille.fr" target="_blank" rel="noopener">TikTok</a>
-        <a href="https://www.youtube.com/@MaisonChenille" target="_blank" rel="noopener">YouTube</a>
+      <a class="wordmark" href="/" aria-label="Maison Chenille, accueil"><img src="/assets/wordmark.webp" alt="Maison Chenille" width="1047" height="186"></a>
+      <nav class="nav-main" aria-label="Navigation principale"><a href="/bouquets/">Bouquets</a><a href="/kits/">Kits</a><a href="/histoire/">Notre histoire</a><a href="/la-maison/">La maison</a></nav>
+      <div class="nav-side">
+        <a class="icon" href="https://www.instagram.com/maisonchenille2026/" target="_blank" rel="noopener" aria-label="Instagram"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r=".8" fill="currentColor"/></svg></a>
         <a class="lang" href="/en/" lang="en" hreflang="en">EN</a>
-      </nav>
+      </div>
     </div>
   </header>
 
   <main>
 
-    <!-- 2 · 开场 -->
-    <section class="hero">
-      <img class="watermark" src="assets/rose-transparent.png" alt="" aria-hidden="true" width="690" height="690">
+    <!-- 1 · Ouverture -->
+    <section class="hero-split">
       <div class="wrap">
-        <img class="badge" src="assets/seal-transparent.png" alt="" width="1200" height="1200">
-        <p class="eyebrow">Paris · Fil chenille · Composé à la main</p>
-        <h1>Des bouquets qui ne fanent pas.</h1>
-        <p class="lead">Maison Chenille crée des bouquets en fil chenille <em>qui ne fanent pas</em>. Des fleurs façonnées à la main, des couleurs choisies avec soin, composées à Paris.</p>
-        <p class="small note">Première collection en préparation.</p>
+        <div>
+          <p class="eyebrow">Paris · Fil chenille · Composé à la main</p>
+          <h1>Des bouquets qui ne fanent pas.</h1>
+          <p class="lead">Des fleurs en fil chenille façonnées à la main, des couleurs qu'on ne trouve pas partout, composées en bouquet à Paris. <em>Première collection en préparation.</em></p>
+          <div class="actions">
+            <a class="btn" href="/bouquets/">Voir les bouquets</a>
+            <a class="btn ghost" href="/histoire/">Notre histoire</a>
+          </div>
+        </div>
+        <!-- TODO : remplacer ce panneau par la première photo de bouquet (format 4:5) -->
+        <div class="panel" aria-hidden="true">
+          <div>
+            <div class="no">Première collection</div>
+            <div class="name">En préparation</div>
+          </div>
+          <div class="list"><span>Des bouquets qui se gardent,</span><span>pour les jours qui comptent.</span></div>
+          <img class="rose" src="/assets/rose-cream.png" alt="" width="690" height="690">
+        </div>
+      </div>
+    </section>
 
-        <!-- 表单由 Formspree 接收（formspree.io → Maison Chenille — Lancement） -->
+    <!-- 2 · Sélection de saison -->
+    <section class="featured" id="saison">
+      <div class="wrap">
+        <div class="head">
+          <p class="eyebrow">Sélection de saison</p>
+          <h2>Cet hiver</h2>
+          <hr class="rule center">
+          <p class="small">Les premières pièces que nous préparons. Les photos arrivent avec les premiers bouquets.</p>
+        </div>
+        <div class="products" data-featured="4"></div>
+        <noscript><p class="empty">Activez JavaScript pour voir la sélection, ou passez par <a href="/bouquets/">la page Bouquets</a>.</p></noscript>
+        <p class="more"><a href="/bouquets/">Tous les bouquets →</a></p>
+      </div>
+    </section>
+
+    <!-- 3 · Deux entrées -->
+    <section class="entries">
+      <div class="wrap">
+        <a class="entry wine" href="/bouquets/">
+          <img class="rose" src="/assets/rose-cream.png" alt="" width="690" height="690">
+          <p class="eyebrow">Prêts à offrir</p>
+          <h2>Bouquets</h2>
+          <p>Composés à Paris, dans une boîte qu'on garde. Des bouquets et des fleurs à l'unité.</p>
+          <span class="cta">Découvrir →</span>
+        </a>
+        <a class="entry forest" href="/kits/">
+          <img class="rose" src="/assets/rose-cream.png" alt="" width="690" height="690">
+          <p class="eyebrow">À faire soi-même</p>
+          <h2>Kits</h2>
+          <p>Le fil, le patron et les gestes, pour composer son propre bouquet. En développement.</p>
+          <span class="cta">Découvrir →</span>
+        </a>
+      </div>
+    </section>
+
+    <!-- 4 · Par couleur -->
+    <section class="palette" id="couleurs">
+      <div class="wrap">
+        <div class="head">
+          <p class="eyebrow">Par couleur</p>
+          <h2>Choisir une teinte</h2>
+          <hr class="rule center">
+        </div>
+        <div class="colors" data-colors></div>
+      </div>
+    </section>
+
+    <!-- 5 · Notre histoire -->
+    <section class="teaser">
+      <div class="wrap">
+        <!-- TODO : remplacer par /assets/ronghua-1.jpg (format 4:3) -->
+        <figure class="placeholder" aria-hidden="true"><img src="/assets/seal-transparent.png" alt="" width="1200" height="1200"></figure>
+        <div>
+          <p class="eyebrow">Notre histoire</p>
+          <h2>Mille ans avant le fil chenille</h2>
+          <hr class="rule">
+          <p>Le fil chenille descend du <em>ronghua</em>, la fleur de soie des cours impériales chinoises : de la soie serrée entre deux fils de cuivre, pressée, taillée, assemblée à la pince, portée dans les cheveux aux jours qui comptent. Nous lui rendons ses gestes, avec les couleurs d'aujourd'hui.</p>
+          <p style="margin-top:22px"><a class="btn ghost" href="/histoire/">Lire l'histoire</a></p>
+        </div>
+      </div>
+    </section>
+
+    <!-- 6 · E-mail -->
+    <section class="newsletter" id="lancement">
+      <div class="wrap">
+        <p class="eyebrow">Lancement</p>
+        <h2>Un seul e-mail, le jour où les bouquets seront prêts.</h2>
         <form class="signup center" action="https://formspree.io/f/mljgqjze" method="POST">
           <input type="hidden" name="_subject" value="Nouvelle inscription — Maison Chenille">
           <input type="hidden" name="_next" value="https://maisonchenille.fr/merci.html">
           <input type="hidden" name="_language" value="fr">
           <input type="text" name="_gotcha" style="display:none" tabindex="-1" autocomplete="off">
-          <label for="email-hero" class="sr-only">Votre adresse e-mail</label>
-          <input id="email-hero" type="email" name="email" placeholder="votre@email.fr" required autocomplete="email">
+          <label for="email-home" class="sr-only">Votre adresse e-mail</label>
+          <input id="email-home" type="email" name="email" placeholder="votre@email.fr" required autocomplete="email">
           <button type="submit" class="btn">Prévenez-moi du lancement</button>
         </form>
-        <p class="tiny">Un seul e-mail au lancement. Pas de newsletter.</p>
-      </div>
-    </section>
-
-    <!-- 3 · 概念 -->
-    <section class="concept">
-      <div class="wrap">
-        <div class="head">
-          <p class="eyebrow">Le principe</p>
-          <h2 style="margin-top:12px">Des fleurs qui restent</h2>
-          <hr class="rule center">
-        </div>
-        <div class="grid">
-          <div>
-            <div class="num">01</div>
-            <h3>Un héritage</h3>
-            <p>Le fil chenille descend du <em>ronghua</em>, la fleur de soie des cours impériales chinoises, portée dans les cheveux aux jours qui comptent. <a href="ronghua.html">Lire l'histoire →</a></p>
-          </div>
-          <div>
-            <div class="num">02</div>
-            <h3>Composé à Paris</h3>
-            <p>Chaque bouquet est assemblé et emballé ici, prêt à offrir, et expédié depuis la France.</p>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- 4 · 预告 -->
-    <section class="kit" id="kit">
-      <div class="wrap">
-        <!-- TODO: 有了第一个系列的照片后，把这张卡片换成 <img> -->
-        <div class="card" aria-hidden="true">
-          <div>
-            <div class="no">Première collection</div>
-            <div class="name">En préparation</div>
-          </div>
-          <div class="list">
-            <span>Des bouquets qui se gardent,</span>
-            <span>pour les jours qui comptent.</span>
-          </div>
-          <img class="rose" src="assets/rose-cream.png" alt="" width="690" height="690">
-        </div>
-        <div>
-          <p class="eyebrow">Bientôt</p>
-          <h2>Une première collection en préparation</h2>
-          <hr class="rule">
-          <p class="desc">Nous choisissons les fleurs, les couleurs et les boîtes. Des bouquets prêts à offrir, et des fleurs à l'unité, pour les jours qui comptent.</p>
-          <p class="small">Laissez votre e-mail : un seul message, le jour où ils seront prêts.</p>
-
-          <!-- 开卖时换成：<a class="btn" href="https://buy.stripe.com/xxxx">Acheter</a> -->
-          <form class="signup" action="https://formspree.io/f/mljgqjze" method="POST">
-          <input type="hidden" name="_subject" value="Nouvelle inscription — Maison Chenille">
-          <input type="hidden" name="_next" value="https://maisonchenille.fr/merci.html">
-          <input type="hidden" name="_language" value="fr">
-          <input type="text" name="_gotcha" style="display:none" tabindex="-1" autocomplete="off">
-            <label for="email-kit" class="sr-only">Votre adresse e-mail</label>
-            <input id="email-kit" type="email" name="email" placeholder="votre@email.fr" required autocomplete="email">
-            <button type="submit" class="btn">Prévenez-moi</button>
-          </form>
-        </div>
-      </div>
-    </section>
-
-    <!-- 5 · 关于 -->
-    <section class="about">
-      <div class="wrap">
-        <div class="quote">
-          Une fleur qui ne fane pas, pour les jours qui comptent.
-          <small>Maison Chenille · Paris</small>
-        </div>
-        <div>
-          <p class="eyebrow">La maison</p>
-          <h2 style="margin-top:12px">Née sur une table de cuisine</h2>
-          <hr class="rule">
-          <p>Maison Chenille est née à Paris, d'une envie simple : offrir des fleurs qui restent. Le fil chenille, doux et un peu rétro, s'y prête à merveille.</p>
-          <p>Il descend d'un geste très ancien : le <em>ronghua</em>, la fleur de soie des cours impériales chinoises. Des fils de soie serrés entre deux fils de cuivre, pressés, taillés, assemblés à la pince, puis portés dans les cheveux aux jours qui comptent. Nous lui rendons ses gestes, avec les couleurs d'aujourd'hui.</p>
-          <p>Chaque bouquet est pensé comme un petit objet : des couleurs qu'on ne trouve pas partout, une boîte qu'on garde. Des kits pour les faire soi-même suivront.</p>
-          <p>Les premiers bouquets ont été composés sur une table de cuisine, un soir d'automne 2026.</p>
-        </div>
+        <p class="tiny">Pas de newsletter. Juste ce message-là.</p>
       </div>
     </section>
 
   </main>
 
-  <!-- 6 · 页脚 -->
   <footer class="site-footer">
     <div class="wrap">
-      <img class="seal" src="assets/seal-transparent.png" alt="" width="1200" height="1200">
-      <div>
-        <div class="brand">Maison Chenille</div>
-        <div class="links">
-          <a href="mailto:contact@maisonchenille.fr">contact@maisonchenille.fr</a>
-          <a href="https://www.instagram.com/maisonchenille2026/" target="_blank" rel="noopener">Instagram</a>
-          <a href="https://www.tiktok.com/@maisonchenille.fr" target="_blank" rel="noopener">TikTok</a>
-          <a href="https://www.youtube.com/@MaisonChenille" target="_blank" rel="noopener">YouTube</a>
-          <a href="ronghua.html">L'histoire du ronghua</a>
-          <a href="mentions-legales.html">Mentions légales</a>
+      <div class="cols">
+        <div class="brandcol">
+          <img class="seal" src="/assets/seal-transparent.png" alt="" width="1200" height="1200">
+          <div class="brand">Maison Chenille</div>
+          <p>Des bouquets en fil chenille qui ne fanent pas, composés à Paris.</p>
+        </div>
+        <div>
+          <h4>Boutique</h4>
+          <ul>
+            <li><a href="/bouquets/">Bouquets</a></li>
+            <li><a href="/kits/">Kits</a></li>
+            <li><a href="/#saison">Sélection de saison</a></li>
+            <li><a href="/#couleurs">Par couleur</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4>La maison</h4>
+          <ul>
+            <li><a href="/histoire/">Notre histoire</a></li>
+            <li><a href="/la-maison/">La maison</a></li>
+            <li><span class="soon">Journal</span></li>
+            <li><a href="mailto:contact@maisonchenille.fr">Contact</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4>Aide</h4>
+          <ul>
+            <li><span class="soon">Livraison</span></li>
+            <li><span class="soon">Questions fréquentes</span></li>
+            <li><span class="soon">Conditions de vente</span></li>
+            <li><a href="/mentions-legales.html">Mentions légales</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4>Suivre</h4>
+          <ul>
+            <li><a href="https://www.instagram.com/maisonchenille2026/" target="_blank" rel="noopener">Instagram</a></li>
+            <li><a href="https://www.tiktok.com/@maisonchenille.fr" target="_blank" rel="noopener">TikTok</a></li>
+            <li><a href="https://www.youtube.com/@MaisonChenille" target="_blank" rel="noopener">YouTube</a></li>
+            <li><a href="mailto:contact@maisonchenille.fr">contact@maisonchenille.fr</a></li>
+          </ul>
         </div>
       </div>
-      <div class="copy">© MMXXVI · Maison Chenille · Paris</div>
+      <div class="bottom">
+        <span>© MMXXVI · Maison Chenille · Paris</span>
+        <span>Fil chenille · Composé à la main</span>
+      </div>
     </div>
   </footer>
 

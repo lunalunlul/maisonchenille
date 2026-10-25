@@ -1,0 +1,114 @@
+{
+  "_comment": "Catalogue de maisonchenille.fr. Pour ajouter un produit : une entrée dans 'products' + une image dans /assets/produits/. 'price' en euros (nombre) ou null tant qu'il n'est pas fixé. 'status' : 'bientot' | 'dispo' | 'epuise'. 'stripe' : lien Stripe Payment Link quand il existe. 'featured' : true pour la sélection de saison sur l'accueil.",
+
+  "colors": {
+    "bordeaux":    { "label": "Bordeaux",    "hex": "#5C1A2A" },
+    "vert-sapin":  { "label": "Vert sapin",  "hex": "#1F3A2E" },
+    "creme":       { "label": "Crème",       "hex": "#F4EBDD" },
+    "or":          { "label": "Or",          "hex": "#B08D4F" },
+    "sauge":       { "label": "Sauge",       "hex": "#8A9A7B" },
+    "terracotta":  { "label": "Terracotta",  "hex": "#B5603E" },
+    "prune":       { "label": "Prune",       "hex": "#4A2A4A" },
+    "rose-poudre": { "label": "Rose poudré", "hex": "#D9B0B0" }
+  },
+
+  "occasions": {
+    "offrir":  "À offrir",
+    "fetes":   "Fêtes",
+    "mariage": "Mariage",
+    "maison":  "Pour la maison"
+  },
+
+  "price_bands": [
+    { "id": "moins-30", "label": "Moins de 30 €", "min": 0,  "max": 30 },
+    { "id": "30-60",    "label": "30 – 60 €",      "min": 30, "max": 60 },
+    { "id": "plus-60",  "label": "Plus de 60 €",   "min": 60, "max": null }
+  ],
+
+  "products": [
+    {
+      "id": "bouquet-hiver",
+      "type": "bouquet",
+      "name": "Bouquet d'hiver",
+      "tagline": "Pomme de pin, houx, poinsettia.",
+      "price": null,
+      "colors": ["bordeaux", "vert-sapin", "or"],
+      "occasions": ["fetes", "offrir"],
+      "season": "hiver",
+      "featured": true,
+      "image": null,
+      "stripe": null,
+      "status": "bientot"
+    },
+    {
+      "id": "bouquet-bordeaux",
+      "type": "bouquet",
+      "name": "Bouquet bordeaux",
+      "tagline": "Anémones et romarin, dans une boîte crème.",
+      "price": null,
+      "colors": ["bordeaux", "sauge", "creme"],
+      "occasions": ["offrir", "maison"],
+      "season": "hiver",
+      "featured": true,
+      "image": null,
+      "stripe": null,
+      "status": "bientot"
+    },
+    {
+      "id": "fleur-anemone",
+      "type": "bouquet",
+      "name": "Anémone à l'unité",
+      "tagline": "Une seule fleur, longue tige.",
+      "price": null,
+      "colors": ["bordeaux"],
+      "occasions": ["offrir", "maison"],
+      "season": "toute-saison",
+      "featured": true,
+      "image": null,
+      "stripe": null,
+      "status": "bientot"
+    },
+    {
+      "id": "fleur-pomme-de-pin",
+      "type": "bouquet",
+      "name": "Pomme de pin à l'unité",
+      "tagline": "Pour une table, une branche, un paquet.",
+      "price": null,
+      "colors": ["or", "vert-sapin"],
+      "occasions": ["fetes", "maison"],
+      "season": "hiver",
+      "featured": false,
+      "image": null,
+      "stripe": null,
+      "status": "bientot"
+    },
+    {
+      "id": "bouquet-creme-or",
+      "type": "bouquet",
+      "name": "Bouquet crème & or",
+      "tagline": "Clair, pour une table de mariage.",
+      "price": null,
+      "colors": ["creme", "or", "sauge"],
+      "occasions": ["mariage", "offrir"],
+      "season": "toute-saison",
+      "featured": false,
+      "image": null,
+      "stripe": null,
+      "status": "bientot"
+    },
+    {
+      "id": "kit-tulipe",
+      "type": "kit",
+      "name": "Kit Tulipe",
+      "tagline": "Le fil, le patron et les gestes, pour trois tulipes.",
+      "price": null,
+      "colors": ["rose-poudre", "sauge", "creme"],
+      "occasions": ["maison", "offrir"],
+      "season": "printemps",
+      "featured": true,
+      "image": null,
+      "stripe": null,
+      "status": "bientot"
+    }
+  ]
+}
