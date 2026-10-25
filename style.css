@@ -307,6 +307,8 @@ p + p { margin-top: 16px; }
 .story .chapter p + p { margin-top: 16px; }
 .story figure { margin: 36px auto; max-width: 820px; }
 .story figure svg { width: 100%; height: auto; display: block; }
+.story figure img { width: 100%; height: auto; display: block; border: 1px solid rgba(176,141,79,.3); }
+.story figure.opening { margin: 48px auto 0; }
 .story .gestes { display:grid; grid-template-columns: repeat(3, 1fr); gap: 16px; text-align:center; margin-top: 4px; }
 .story .gestes b { display:block; font-size: 17px; color: var(--wine); font-weight: 600; }
 .story .gestes span { display:block; font-size: 14px; color: var(--forest); margin-top: 4px; line-height: 1.4; }
@@ -423,6 +425,8 @@ p + p { margin-top: 16px; }
   display: grid; place-items: center;
 }
 .teaser .placeholder img { width: 38%; opacity: .7; }
+.teaser .photo { margin: 0; }
+.teaser .photo img { width: 100%; height: auto; display: block; border: 1px solid rgba(176,141,79,.3); }
 
 /* 邮箱 */
 .newsletter { background: var(--dark); color: var(--cream); padding: 96px 0; text-align: center; }
