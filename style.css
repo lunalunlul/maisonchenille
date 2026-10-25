@@ -308,14 +308,12 @@ p + p { margin-top: 16px; }
 .story figure { margin: 36px auto; max-width: 720px; }
 .story figure svg { width: 100%; height: auto; display: block; }
 .story figure img { width: 100%; height: auto; display: block; border: 1px solid rgba(176,141,79,.3); }
-.story .story-open { display: grid; grid-template-columns: 5fr 6fr; gap: 56px; align-items: center; margin-top: 8px; }
-.story .story-open figure.opening { margin: 0; max-width: none; }
-.story .story-open .intro { text-align: left; margin: 0; max-width: none; }
-.story .story-open h1 { font-size: clamp(44px, 5vw, 64px); }
-.story .story-open .lead { font-size: 20px; }
+.story .story-open { display: grid; grid-template-columns: 5fr 6fr; gap: 56px; align-items: start; margin-top: 72px; }
+.story .story-open figure.opening { margin: 0; max-width: none; position: sticky; top: 96px; }
+.story .story-open .chapter { margin-top: 0; }
 @media (max-width: 800px) {
-  .story .story-open { grid-template-columns: 1fr; gap: 28px; }
-  .story .story-open figure.opening { order: 2; }
+  .story .story-open { grid-template-columns: 1fr; gap: 28px; margin-top: 48px; }
+  .story .story-open figure.opening { position: static; }
 }
 .story .gestes { display:grid; grid-template-columns: repeat(3, 1fr); gap: 16px; text-align:center; margin-top: 4px; }
 .story .gestes b { display:block; font-size: 17px; color: var(--wine); font-weight: 600; }
