@@ -1,5 +1,5 @@
 {
-  "_comment": "Catalogue de maisonchenille.fr. Pour ajouter un produit : une entrée dans 'products' + une image dans /assets/produits/. 'price' en euros (nombre) ou null tant qu'il n'est pas fixé. 'status' : 'bientot' | 'dispo' | 'epuise'. 'stripe' : lien Stripe Payment Link quand il existe. 'featured' : true pour la sélection de saison sur l'accueil. Champs *_en : version anglaise (name_en, tagline_en, label_en, occasions_en).",
+  "_comment": "Catalogue de maisonchenille.fr. Pour ajouter un produit : une entrée dans 'products' + une image dans /assets/produits/. 'price' en euros (nombre) ou null tant qu'il n'est pas fixé. 'status' : 'bientot' | 'dispo' | 'epuise'. 'stripe' : lien Stripe Payment Link quand il existe. 'featured' : true pour la sélection de saison sur l'accueil. Champs *_en : version anglaise (name_en, tagline_en, label_en, occasions_en). Nomenclature : forme (shapes) + couleur, ex. « Amaryllis bleu », « Arum miel » ; un bouquet se décrit « 2 Amaryllis, 2 Arum, 1 Cosmos, 3 Saule ».",
   "colors": {
     "bordeaux": {
       "label": "Bordeaux",
@@ -47,6 +47,33 @@
     "fetes": "Fêtes",
     "mariage": "Mariage",
     "maison": "Pour la maison"
+  },
+  "shapes": {
+    "amaryllis": {
+      "label": "Amaryllis",
+      "label_en": "Amaryllis",
+      "note": "grande fleur, six pétales droits et pointus, étamines apparentes"
+    },
+    "arum": {
+      "label": "Arum",
+      "label_en": "Calla",
+      "note": "pétales enroulés autour d'un cœur blanc"
+    },
+    "cosmos": {
+      "label": "Cosmos",
+      "label_en": "Cosmos",
+      "note": "pétales plats et ronds, fleur simple"
+    },
+    "saule": {
+      "label": "Saule",
+      "label_en": "Willow",
+      "note": "feuillage : brin long, retombant"
+    },
+    "lys": {
+      "label": "Lys",
+      "label_en": "Lily",
+      "note": "réservé : pétales recourbés, à venir"
+    }
   },
   "price_bands": [
     {
