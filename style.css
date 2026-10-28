@@ -330,6 +330,26 @@ p + p { margin-top: 16px; }
 .legal { padding: 56px 0 110px; max-width: 720px; }
 .legal h1 { font-family: var(--font-serif); font-weight: 500; font-size: 36px; color: var(--wine); margin-bottom: 32px; }
 .legal h2 { font-size: 22px; margin: 36px 0 10px; }
+.legal h1 + .muted { margin-top: -22px; margin-bottom: 28px; }
+.legal p, .legal li { line-height: 1.6; }
+.legal p + p { margin-top: 10px; }
+.legal ul { padding-left: 20px; margin: 8px 0; }
+.legal li + li { margin-top: 6px; }
+.legal .box { margin: 14px 0; padding: 18px 22px; border: 1px solid var(--gold); background: rgba(255,255,255,.35); font-size: 15px; }
+.legal .box p + p { margin-top: 8px; }
+.legal em { color: var(--wine); }
+.legal table.data { width: 100%; border-collapse: collapse; font-size: 14.5px; margin: 12px 0 4px; }
+.legal table.data th, .legal table.data td { text-align: left; vertical-align: top; padding: 9px 10px; border-bottom: 1px solid rgba(176,141,79,.4); }
+.legal table.data th { font-weight: 600; color: var(--wine); font-size: 13px; letter-spacing: .06em; text-transform: uppercase; }
+@media (max-width: 640px) {
+  .legal table.data, .legal table.data tr, .legal table.data td { display: block; width: 100%; }
+  .legal table.data th { display: none; }
+  .legal table.data tr { padding: 10px 0; border-bottom: 1px solid rgba(176,141,79,.4); }
+  .legal table.data td { border: 0; padding: 2px 0; }
+  .legal table.data td::before { content: attr(data-label) ' : '; color: var(--gold); font-size: 12px; letter-spacing: .06em; text-transform: uppercase; }
+  .legal table.data td:first-child { font-weight: 600; color: var(--wine); }
+  .legal table.data td:first-child::before { content: none; }
+}
 
 /* ============================================================
    v3 · 首页分栏、产品卡、目录与筛选
